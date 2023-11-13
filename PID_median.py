@@ -16,11 +16,20 @@ class Gyroscope:
 
     def __init__(self) -> None:
         """
-        Конструктор класса, генерирует случайные вещественные значения в [-50.0, 50.0]
+        Конструктор класса, генерирует случайные вещественные значения в [-0.1, 0.1]
         """
-        self.gyro = {'vx': uniform(-50.0, 50.0),
-                     'vy': uniform(-50.0, 50.0),
-                     'vz': uniform(-50.0, 50.0)}
+        self.gyro = {'vx': 0.0,
+                     'vy': 0.0,
+                     'vz': 0.0}
+
+
+    def generate_rates():
+        """
+        Генератор случайных значений угловых скоростей vx, vy, vz
+        """
+        self.gyro = {'vx': uniform(-0.1, 0.1),
+                     'vy': uniform(-0.1, 0.1),
+                     'vz': uniform(-0.1, 0.1)}
 
     def get_gyroscope(self) -> dict:
         """
@@ -136,6 +145,9 @@ class Dron:
         :param dt: временной шаг
         :return: None
         """
+
+        # получение значений с гироскопа
+        self.gyroscope.generate_rates()
         v = self.gyroscope.get_gyroscope()
         vx, vy, vz = v['vx'], v['vy'], v['vz']
         print(f'Gyroscope: {v}')
