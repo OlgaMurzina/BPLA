@@ -23,7 +23,7 @@ class Gyroscope:
                      'vz': 0.0}
 
 
-    def generate_rates():
+    def generate_rates() -> None:
         """
         Генератор случайных значений угловых скоростей vx, vy, vz
         """
