@@ -3,7 +3,7 @@ from random import uniform
 import requests
 
 username = 'olmur'
-token = '0a37138668bbad146a9bcdd77640c90368b2cdbf'
+token = ''
 path = '/home/olmur/quadrocopter'
 content2 = {  'vx': uniform(0, 3),
               'vy': uniform(0, 3),
